@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirzor Deb - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(26, 26, 26, 0.98);
+            box-shadow: 0 2px 20px rgba(255, 165, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff6b35;
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+            animation: profileGlow 3s ease-in-out infinite alternate;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .personal-info {
+            font-size: 1rem;
+            color: #aaaaaa;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero .motto {
+            font-size: 1.2rem;
+            color: #ff6b35;
+            font-style: italic;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ff6b35;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .about-card {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .about-card:hover::before {
+            left: 100%;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .about-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-icon {
+            font-size: 2rem;
+            color: #ff6b35;
+            animation: bounce 2s infinite;
+        }
+
+        .about-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            margin: 4rem 0;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #ff6b35, #ffa500);
+            transform: translateX(-50%);
+        }
+
+        .education-item {
+            position: relative;
+            margin: 3rem 0;
+            opacity: 0;
+            animation: slideInFromLeft 0.8s ease forwards;
+        }
+
+        .education-item:nth-child(even) {
+            animation: slideInFromRight 0.8s ease forwards;
+        }
+
+        .education-content {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            width: 45%;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .education-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .education-item:nth-child(even) .education-content {
+            margin-left: auto;
+        }
+
+        .education-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        .education-year {
+            color: #ff6b35;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .education-institution {
+            color: #cccccc;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .education-details {
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+
+        .gpa-highlight {
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        .scholarship-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .project-card {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #ff6b35;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .project-subtitle {
+            color: #ff6b35;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .project-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features li {
+            color: #aaaaaa;
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .project-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .experience-card {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .experience-card:hover::before {
+            left: 100%;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-icon {
+            font-size: 2rem;
+            color: #ff6b35;
+            animation: bounce 2s infinite;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .experience-period {
+            color: #ff6b35;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Photo Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #2d2d2d, #3d3d3d);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: 2px dashed #ff6b35;
+        }
+
+        .gallery-placeholder i {
+            font-size: 3rem;
+            color: #ff6b35;
+            opacity: 0.7;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .skill-card {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .achievement-category {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .achievement-category:hover::before {
+            left: 100%;
+        }
+
+        .achievement-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .achievement-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            color: #ff6b35;
+            animation: bounce 2s infinite;
+        }
+
+        .achievement-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .achievement-count {
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+            color: #cccccc;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .achievement-item::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            font-size: 1rem;
+            animation: sparkle 2s infinite;
+        }
+
+        .achievement-item:hover {
+            color: #ff6b35;
+            transform: translateX(10px);
+        }
+
+        .achievement-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ff6b35;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+            }
+        }
+
+        @keyframes profileGlow {
+            from {
+                box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+            }
+            to {
+                box-shadow: 0 0 50px rgba(255, 107, 53, 0.6);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                flex: none;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .education-timeline::before {
+                left: 30px;
+            }
+            
+            .education-content {
+                width: calc(100% - 80px);
+                margin-left: 60px !important;
+            }
+            
+            .education-icon {
+                left: 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .achievements-grid,
+            .projects-grid,
+            .experience-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Nirzor Deb</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Nirzor Deb</h1>
+                <p class="subtitle">Computer Engineer & Research Enthusiast</p>
+                <div class="personal-info">
+                    <p><i class="fas fa-birthday-cake"></i> Born: January 15, 2007</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Currently living in Dhaka, Bangladesh</p>
+                    <p><i class="fas fa-home"></i> From: Tillagoan, Kulaura, Moulvibazar</p>
+                    <p><i class="fas fa-tint"></i> Blood Group: A+</p>
+                </div>
+                <p class="motto">"Sky is the limit"</p>
+                <a href="#about" class="cta-button">Explore My Journey</a>
+            </div>
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Nirzor Deb" class="profile-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <!-- Current Work -->
+            <div class="about-card">
+                <div class="about-header">
+                    <div class="about-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="about-title">Current Role</div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    Currently serving as an <strong>Executive Member</strong> at 
+                    <a href="https://chintarchash.org/" target="_blank" style="color: #ff6b35; text-decoration: none;">Chintarchash</a>, 
+                    a voluntary research organization, since <strong>April 17, 2025</strong>. 
+                    Contributing to research initiatives and community development projects.
+                </p>
+            </div>
+
+            <!-- Languages -->
+            <div class="about-card">
+                <div class="about-header">
+                    <div class="about-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="about-title">Languages</div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    <strong>Bangla:</strong> Native fluency<br>
+                    <strong>English:</strong> Conversational skills<br>
+                    Comfortable communicating in both academic and professional settings.
+                </p>
+            </div>
+
+            <!-- Research Interest -->
+            <div class="about-card">
+                <div class="about-header">
+                    <div class="about-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="about-title">Research Interest</div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    Actively seeking opportunities as a <strong>Research Assistant</strong> (including voluntary positions). 
+                    Passionate about AI applications in climate science, agriculture, and sustainable technology solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2 class="section-title">Educational Journey</h2>
+        
+        <div class="education-timeline">
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-content">
+                    <div class="education-year">2017</div>
+                    <h3 class="education-title">Primary School Certificate (PSC)</h3>
+                    <p class="education-institution">
+                        <a href="https://www.victoriahs-sreemangal.edu.bd/" target="_blank" style="color: #cccccc; text-decoration: none;">
+                            Victoriya High School, Sreemangal
+                        </a>
+                    </p>
+                    <div class="education-details">
+                        <p>Achieved outstanding academic performance with <span class="gpa-highlight">GPA 5.00</span></p>
+                        <p>Awarded prestigious <strong>Talentpool Scholarship</strong> for exceptional merit</p>
+                        <div class="scholarship-badge">
+                            <i class="fas fa-trophy"></i> Talentpool Scholar
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="education-content">
+                    <div class="education-year">2023</div>
+                    <h3 class="education-title">Secondary School Certificate (SSC)</h3>
+                    <p class="education-institution">
+                        <a href="https://www.victoriahs-sreemangal.edu.bd/" target="_blank" style="color: #cccccc; text-decoration: none;">
+                            Victoriya High School, Sreemangal
+                        </a>
+                    </p>
+                    <div class="education-details">
+                        <p>Maintained excellence with <span class="gpa-highlight">GPA 5.00</span></p>
+                        <p>Demonstrated consistent academic performance throughout secondary education</p>
+                        <p>Active participation in various academic and extracurricular activities</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="education-content">
+                    <div class="education-year">2025 - Present</div>
+                    <h3 class="education-title">Higher Secondary Certificate (HSC)</h3>
+                    <p class="education-institution">Dhaka Residential Model College</p>
+                    <div class="education-details">
+                        <p>Currently in <strong>Class 12</strong></p>
+                        <p>Expected to graduate after HSC examination in <span class="gpa-highlight">October 2025</span></p>
+                        <p>Preparing for higher education in Computer Engineering and AI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects & Research</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <img src="greenalert-logo.jpg" alt="Green Alert Logo" class="project-logo">
+                    <div>
+                        <div class="project-title">Green Alert</div>
+                        <div class="project-subtitle">AI-Driven Climate Assistant for Tea Farmers</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    A climate-smart assistant developed to support tea cultivation in Bangladesh's climate-vulnerable regions. 
+                    Co-authored with <strong>Rudronil Das</strong> and participated in the <strong>National AI Olympiad</strong>.
+                </div>
+                <ul class="project-features">
+                    <li>Real-time weather updates and AI-generated farming suggestions</li>
+                    <li>Bilingual support (English-Bangla) for local farmers</li>
+                    <li>Mobile-friendly design for field usability</li>
+                    <li>Integration with agricultural research data</li>
+                    <li>Climate adaptation strategies for tea cultivation</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/nirzordeb/greenalert3" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" class="project-link">
+                        <i class="fas fa-presentation"></i> Presentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Leadership & Experience</h2>
+        <div class="experience-grid">
+            <!-- Research Organization -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div>
+                        <div class="experience-title">Executive Member</div>
+                        <div class="experience-period">April 2025 - Present</div>
+                    </div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    <strong>Chintarchash</strong> - Voluntary Research Organization<br>
+                    Contributing to research initiatives, community development projects, and collaborative research methodologies.
+                </p>
+            </div>
+
+            <!-- Science Club President -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div>
+                        <div class="experience-title">Former President</div>
+                        <div class="experience-period">High School Period</div>
+                    </div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    <strong>Nobangkur Science Club</strong> - Victoriya High School<br>
+                    Led science club activities, organized competitions, and promoted STEM education among students.
+                </p>
+            </div>
+
+            <!-- Band Manager -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div>
+                        <div class="experience-title">Band Manager</div>
+                        <div class="experience-period">Recent</div>
+                    </div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    <strong><a href="https://www.facebook.com/profile.php?id=100090446148694" target="_blank" style="color: #ff6b35; text-decoration: none;">Mela</a></strong> - Music Band<br>
+                    Managing band operations, coordinating performances, and handling promotional activities.
+                </p>
+            </div>
+
+            <!-- International Experience -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="experience-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <div class="experience-title">International Participant</div>
+                        <div class="experience-period">2025</div>
+                    </div>
+                </div>
+                <p style="color: #cccccc; line-height: 1.6;">
+                    <strong>International Youth Research Camp 2025</strong><br>
+                    Kathmandu, Nepal - Participated in international research collaboration and youth development programs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML</h3>
+                <p>Solid foundation in web markup and structure</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+                <p>Programming fundamentals and data analysis</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>C Programming</h3>
+                <p>Understanding of low-level programming concepts</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <h3>MS Office 365</h3>
+                <p>Proficient in Word, Excel, PowerPoint, and Teams</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI & Research</h3>
+                <p>Passionate about artificial intelligence and research methodologies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="section">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <div class="gallery-title">Nepal Experience</div>
+                <div class="gallery-description">International Youth Research Camp 2025, Kathmandu</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="gallery-title">Band Management</div>
+                <div class="gallery-description">Managing "Mela" band activities and performances</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="gallery-title">Research Activities</div>
+                <div class="gallery-description">Chintarchash research organization events</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <h2 class="section-title">Achievements & Recognition</h2>
+        <div class="achievements-grid">
+            <!-- Academic Excellence -->
+            <div class="achievement-category">
+                <div class="achievement-header">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="achievement-title">Academic Excellence</div>
+                    <div class="achievement-count">4</div>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">1st Place Merit - Class 7 to 10 VHS - Academic Merit Recognition</li>
+                    <li class="achievement-item">Smart Students Recognition - Academic Excellence Award</li>
+                    <li class="achievement-item">Scholar Foundation Examination - Academic Scholarship Achievement</li>
+                    <li class="achievement-item">"নির্ঝর,মৌল্ভীবাজার" Examination Certificate - National Level Academic Achievement</li>
+                </ul>
+            </div>
+
+            <!-- Arts & Culture -->
+            <div class="achievement-category">
+                <div class="achievement-header">
+                    <div class="achievement-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="achievement-title">Arts & Culture</div>
+                    <div class="achievement-count">8</div>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">2nd Place in Art Competition - Sreemangal Municipality</li>
+                    <li class="achievement-item">3rd Place in Moushumi Dewalika Competition - Regional Arts</li>
+                    <li class="achievement-item">Moushumi Dewalika District Level Competition</li>
+                    <li class="achievement-item">Moushumi Dewalika Upazila Level Competition</li>
+                    <li class="achievement-item">Provincial Level Dewalika Competition</li>
+                    <li class="achievement-item">Bijoyful Art Competition - Local Arts Participation</li>
+                    <li class="achievement-item">Gram Theatre Art Competition - Community Level</li>
+                    <li class="achievement-item">Somota Khelaghor Art Competition</li>
+                </ul>
+            </div>
+
+            <!-- Science & Technology -->
+            <div class="achievement-category">
+                <div class="achievement-header">
+                    <div class="achievement-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="achievement-title">Science & Technology</div>
+                    <div class="achievement-count">5</div>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">2nd Place in MSEDA Science Fair - Regional Competition</li>
+                    <li class="achievement-item">3rd Place in MSEDA Quiz Competition - Regional Science Quiz</li>
+                    <li class="achievement-item">MSEDA Science Competition - Regional Participation</li>
+                    <li class="achievement-item">Physics Olympiad National Round - National Participation</li>
+                    <li class="achievement-item">Science Speech Competition - Upazila Level</li>
+                </ul>
+            </div>
+
+            <!-- International Recognition -->
+            <div class="achievement-category">
+                <div class="achievement-header">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="achievement-title">International Recognition</div>
+                    <div class="achievement-count">3</div>
+                </div>
+                <ul class="achievement-list">
+                    <li class="achievement-item">International Youth Research Conference 2025 - Research Participation</li>
+                    <li class="achievement-item">International Youth Conference Participation - Youth Development</li>
+                    <li class="achievement-item">International Youth Research Conference - Academic Recognition</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:debkanchan437@gmail.com">debkanchan437@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/nirzordeb/" target="_blank">nirzordeb</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/nirzordeb" target="_blank">nirzordeb</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/nirzordeb" target="_blank">nirzordeb</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.education-item, .achievement-category, .project-card, .experience-card, .about-card').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Add floating particles effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = '#ff6b35';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.opacity = '0.7';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.zIndex = '1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 0.7 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>
+
