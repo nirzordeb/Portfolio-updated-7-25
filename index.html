@@ -554,59 +554,6 @@
             margin-top: 0.2rem;
         }
 
-        /* Photo Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .gallery-item {
-            background: rgba(45, 45, 45, 0.8);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 107, 53, 0.2);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
-            border-color: rgba(255, 107, 53, 0.5);
-        }
-
-        .gallery-placeholder {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #2d2d2d, #3d3d3d);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            border: 2px dashed #ff6b35;
-        }
-
-        .gallery-placeholder i {
-            font-size: 3rem;
-            color: #ff6b35;
-            opacity: 0.7;
-        }
-
-        .gallery-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery-description {
-            color: #cccccc;
-            font-size: 0.9rem;
-        }
-
         /* Skills Grid */
         .skills-grid {
             display: grid;
@@ -960,15 +907,15 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Nirzor Deb</h1>
-                <p class="subtitle">Research Enthusiast|Building Bridges Between Local Curiosity and Global innovation </p>
+                <p class="subtitle">Research and Gen AI enthusiast | Building Bridges Between Local Curiosity and Global innovation</p>
                 <div class="personal-info">
                     <p><i class="fas fa-birthday-cake"></i> Born: January 15, 2007</p>
                     <p><i class="fas fa-map-marker-alt"></i> Currently living in Dhaka, Bangladesh</p>
                     <p><i class="fas fa-home"></i> From: Tillagoan, Kulaura, Moulvibazar</p>
                     <p><i class="fas fa-tint"></i> Blood Group: A+</p>
                 </div>
-                <p class="motto">"Sky is the limit"</p>
-                <a href="#about" class="cta-button">Explore My Journey</a>
+                <p class="motto"><strong>"Sky is the limit"</strong></p>
+                <a href="#about" class="cta-button">Explore More</a>
             </div>
             <div class="hero-image">
                 <img src="profile.jpg" alt="Nirzor Deb" class="profile-image">
@@ -980,34 +927,24 @@
     <section id="about" class="section">
         <h2 class="section-title">About Me</h2>
         <div class="about-grid">
-            <!-- Current Work -->
-            <div class="about-card">
+            <!-- New About Me Content -->
+            <div class="about-card" style="grid-column: 1 / -1;">
                 <div class="about-header">
                     <div class="about-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <div class="about-title">Current Role</div>
+                    <div class="about-title">My Story</div>
                 </div>
                 <p style="color: #cccccc; line-height: 1.6;">
-                    Currently serving as an <strong>Executive Member</strong> at 
-                    <a href="https://chintarchash.org/" target="_blank" style="color: #ff6b35; text-decoration: none;">Chintarchash</a>, 
-                    a voluntary research organization, since <strong>April 17, 2025</strong>. 
-                    Contributing to research initiatives and community development projects.
-                </p>
-            </div>
-
-            <!-- Languages -->
-            <div class="about-card">
-                <div class="about-header">
-                    <div class="about-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <div class="about-title">Languages</div>
-                </div>
-                <p style="color: #cccccc; line-height: 1.6;">
-                    <strong>Bangla:</strong> Native fluency<br>
-                    <strong>English:</strong> Conversational skills<br>
-                    Comfortable communicating in both academic and professional settings.
+                    I’m Nirzor Deb, a 12th grader at Dhaka Residential Model College, Bangladesh, passionate about research, innovation, and exploration. My curiosity drives me to find solutions through science and engineering.
+                    <br><br>
+                    A proud achievement was winning an award at the Khudegabeshok Sammelon, hosted by Chintar Chash, which deepened my interest in research.
+                    <br><br>
+                    Currently, I am working as an executive member of Chintar Chash, a voluntary organization that arranges research-based conferences and seminars for high school students across the country. I was also the president of Nobangkur Biggan Club, Victoria High School’s science club, where I led initiatives to inspire young minds.
+                    <br><br>
+                    Throughout my school life, I’ve actively participated in quizzing and debating, earning numerous prizes that shaped my confidence and critical thinking skills.
+                    <br><br>
+                    Outside of academics, I enjoy writing, reflecting, engaging in conversations, painting, and cycling, which connects me with nature. I believe in the power of youth-driven change and thrive in collaborative environments.
                 </p>
             </div>
 
@@ -1087,6 +1024,21 @@
                         <p>Expected to graduate after HSC examination in <span class="gpa-highlight">October 2025</span></p>
                         <p>Preparing for higher education in Computer Engineering and AI</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Merged Future Academic Pursuits -->
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="education-content">
+                    <h3 class="education-title">Future Academic Pursuits</h3>
+                    <p class="education-details">
+                        I am seeking a Bachelor of Science or Engineering degree in <strong>Computer Science</strong>, <strong>Information Technology</strong>, <strong>Artificial Intelligence</strong>, and <strong>Internet of Things (IoT)</strong>.
+                        <br><br>
+                        I am particularly interested in multidisciplinary organizations that work in <strong>Agriculture</strong> and <strong>Climate Resilience</strong>, as I hail from Sreemangal, a region deeply connected to these fields.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1240,33 +1192,12 @@
                 <h3>AI & Research</h3>
                 <p>Passionate about artificial intelligence and research methodologies</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Photo Gallery Section -->
-    <section id="gallery" class="section">
-        <h2 class="section-title">Photo Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <i class="fas fa-mountain"></i>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-language"></i>
                 </div>
-                <div class="gallery-title">Nepal Experience</div>
-                <div class="gallery-description">International Youth Research Camp 2025, Kathmandu</div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <i class="fas fa-music"></i>
-                </div>
-                <div class="gallery-title">Band Management</div>
-                <div class="gallery-description">Managing "Mela" band activities and performances</div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">
-                    <i class="fas fa-flask"></i>
-                </div>
-                <div class="gallery-title">Research Activities</div>
-                <div class="gallery-description">Chintarchash research organization events</div>
+                <h3>Bilingual Skills</h3>
+                <p>Native fluency in Bangla, conversational in English</p>
             </div>
         </div>
     </section>
@@ -1460,4 +1391,6 @@
     </script>
 </body>
 </html>
+
+
 
